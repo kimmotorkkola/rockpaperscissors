@@ -9,8 +9,23 @@ function getComputerChoice(){
 //function to get a round of rock, paper, scissors
 function playRound(playerSelection, computerSelection){
 
-//coming soon
-}
+    if(computerSelection === playerSelection){
+
+        return `It's a tie! Both chose ${playerSelection}`
+
+    } else if(playerSelection === "rock" && computerSelection === "paper" ||
+            playerSelection === "scissors" && computerSelection === "rock" ||
+            playerSelection === "paper" && computerSelection === "scissors"){
+
+        return `You Lost! ${computerSelection} beats ${playerSelection}`}
+
+     else if(playerSelection === "rock" && computerSelection === "scissors" ||
+            playerSelection === "scissors" && computerSelection === "paper" ||
+            playerSelection === "paper" && computerSelection === "rock"){
+
+        return `You Won! ${playerSelection} beats ${computerSelection}`}
+            }
+
 
 
 const playerSelection = "rock";
