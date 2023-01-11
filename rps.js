@@ -16,18 +16,35 @@ function playRound(playerSelection, computerSelection){
     } else if(playerSelection === "rock" && computerSelection === "paper" ||
             playerSelection === "scissors" && computerSelection === "rock" ||
             playerSelection === "paper" && computerSelection === "scissors"){
-
+        computerScore++;
         return `You Lost! ${computerSelection} beats ${playerSelection}`}
 
      else if(playerSelection === "rock" && computerSelection === "scissors" ||
             playerSelection === "scissors" && computerSelection === "paper" ||
             playerSelection === "paper" && computerSelection === "rock"){
-
+        userScore++;
         return `You Won! ${playerSelection} beats ${computerSelection}`}
             }
 
 
 
-const playerSelection = "rock";
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
+
+//Loop to play 5 rounds and declare a winner
+for(let i = 0; i < 5; i++){
+let playerSelection = prompt("Choose rock, paper or scissors");
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection.toLowerCase(), computerSelection));
+console.log("Your score = " + userScore);
+console.log("Computer's score = " + computerScore);
+}
+
+//Print out a winner of the best of 5
+if (computerScore > userScore){
+    console.log("Computer wins the best of 5!");
+} else if(userScore > computerScore){
+    console.log("You win the best of 5!");
+}else{
+    console.log("Best of 5 is a tie!");
+}
